@@ -2,16 +2,16 @@
 
 Interaction with the StatusPage.io API to open and update incidents, change component status.
 
-[![Build Status](https://travis-ci.org/raventools/hubot-statuspage.png)](https://travis-ci.org/raventools/hubot-statuspage)
+[![Build Status](https://travis-ci.org/stephenyeargin/hubot-statuspage.png)](https://travis-ci.org/stephenyeargin/hubot-statuspage)
 
 ## Configuration
 
-* Register the two values as environment variables when starting your bot (as usual with Hubot scripts).
- * `export HUBOT_STATUS_PAGE_ID=page_id_for_account`
- * `export HUBOT_STATUS_PAGE_TOKEN=token_for_status_page`
- * `export HUBOT_STATUS_PAGE_TWITTER_ENABLED=t_or_f`
-
-If you are using Heroku to host your bot, replace `export ...` with `heroku set:config ...`.
+| Environment Variable                | Required? |                            |
+| ------------------------------------| :-------: | -------------------------- |
+| `HUBOT_STATUS_PAGE_ID`              | *Yes* | Found in the My Company > API tab. |
+| `HUBOT_STATUS_PAGE_TOKEN`           | *Yes* | Found in the My Company > API tab. |
+| `HUBOT_STATUS_PAGE_TWITTER_ENABLED` | No  | `t` or `f`                       |
+| `HUBOT_STATUS_PAGE_SHOW_WORKING`    | No  | `1' or nothing                   |
 
 ## Adding to Your Hubot
 
@@ -28,3 +28,7 @@ See full instructions [here](https://github.com/github/hubot/blob/master/docs/sc
 - `hubot status incidents` - Show all unresolved incidents
 - `hubot status open (investigating|identified|monitoring|resolved) <name>: <message>` - Create a new incident using the specified name and message, setting it to the desired status (investigating, etc.). The message can be omitted
 - `hubot status update <status> <message>` - Update the latest open incident with the specified status and message.
+
+## Credits
+
+Originally [developed](https://github.com/travis-ci/moustached-hubot/blob/master/scripts/statuspage.coffee) by the team at Travis CI.

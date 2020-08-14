@@ -8,26 +8,41 @@
     "hubot",
     "hubot-scripts",
     "statuspage",
+    "statuspageio",
     "statuspage.io"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/raventools/hubot-statuspage"
+    "url": "git://github.com/stephenyeargin/hubot-statuspage"
   },
   "bugs": {
-    "url": "https://github.com/raventools/hubot-statuspage/issues"
+    "url": "https://github.com/stephenyeargin/hubot-statuspage/issues"
   },
-  "dependencies": {
-    "coffee-script": "~1.6"
+  "peerDependencies": {
+    "hubot": "^3"
   },
   "devDependencies": {
-    "mocha": "*",
-    "chai": "*",
-    "sinon-chai": "*",
-    "sinon": "*"
+    "chai": "^4.2.0",
+    "coffee-script": "^1.12.7",
+    "hubot-test-helper": "^1.9.0",
+    "husky": "^4.2.5",
+    "matchdep": "^2.0.0",
+    "mocha": "^8.0.1",
+    "nock": "^13.0.2",
+    "release-it": "^13.6.5",
+    "require-dir": "^1.2.0",
+    "sinon": "^9.0.2",
+    "sinon-chai": "^3.5.0"
   },
   "main": "index.coffee",
   "scripts": {
-    "test": "script/test"
+    "release": "release-it",
+    "test": "mocha --require coffee-script/register \"test/**/*.coffee\" --reporter spec"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
+    }
   }
 }

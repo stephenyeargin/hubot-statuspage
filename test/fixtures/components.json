@@ -1,0 +1,17 @@
+[
+  {
+    "id": "string",
+    "page_id": "string",
+    "group_id": "string",
+    "created_at": "2020-08-14T16:11:34Z",
+    "updated_at": "2020-08-14T16:11:34Z",
+    "group": true,
+    "name": "Backend Database",
+    "description": "string",
+    "position": 0,
+    "status": "degraded",
+    "showcase": true,
+    "only_show_if_degraded": true,
+    "automation_email": "string"
+  }
+]
