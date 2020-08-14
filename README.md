@@ -1,8 +1,8 @@
 # Hubot StatusPage
 
-Interaction with the StatusPage.io API to open and update incidents, change component status.
+[![npm version](https://badge.fury.io/js/hubot-statuspage.svg)](http://badge.fury.io/js/hubot-statuspage) [![Build Status](https://travis-ci.org/stephenyeargin/hubot-statuspage.png)](https://travis-ci.org/stephenyeargin/hubot-statuspage)
 
-[![Build Status](https://travis-ci.org/stephenyeargin/hubot-statuspage.png)](https://travis-ci.org/stephenyeargin/hubot-statuspage)
+Interaction with the StatusPage.io API to open and update incidents, change component status.
 
 ## Configuration
 
@@ -11,7 +11,7 @@ Interaction with the StatusPage.io API to open and update incidents, change comp
 | `HUBOT_STATUS_PAGE_ID`              | *Yes* | Found in the My Company > API tab. |
 | `HUBOT_STATUS_PAGE_TOKEN`           | *Yes* | Found in the My Company > API tab. |
 | `HUBOT_STATUS_PAGE_TWITTER_ENABLED` | No  | `t` or `f`                       |
-| `HUBOT_STATUS_PAGE_SHOW_WORKING`    | No  | `1' or nothing                   |
+| `HUBOT_STATUS_PAGE_SHOW_WORKING`    | No  | `1` or nothing                   |
 
 ## Adding to Your Hubot
 
@@ -24,7 +24,7 @@ See full instructions [here](https://github.com/github/hubot/blob/master/docs/sc
 
 - `hubot status?` - Display an overall status of all components
 - `hubot status <component>?` - Display the status of a single component
-- `hubot status <component>` (degraded performance|partial outage|major outage|operational) - Set the status for a component. You can also use degraded, partial or major as shortcuts.
+- `hubot status <component> (degraded performance|partial outage|major outage|operational)` - Set the status for a component. You can also use degraded, partial or major as shortcuts.
 - `hubot status incidents` - Show all unresolved incidents
 - `hubot status open (investigating|identified|monitoring|resolved) <name>: <message>` - Create a new incident using the specified name and message, setting it to the desired status (investigating, etc.). The message can be omitted
 - `hubot status update <status> <message>` - Update the latest open incident with the specified status and message.
