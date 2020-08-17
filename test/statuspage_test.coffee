@@ -71,7 +71,7 @@ describe 'statuspage', ->
       expect(room.messages).to.eql [
         [ 'alice', 'hubot statuspage incidents' ]
         [ 'hubot', 'Unresolved incidents:']
-        [ 'hubot', 'Data Layer Migration (Status: scheduled, Created: 2020-08-14T16:11:34Z, id: bd0b7yh8rkfz)']
+        [ 'hubot', 'Data Layer Migration (Status: scheduled, Created: 2020-08-14T16:11:34Z, ID: bd0b7yh8rkfz)']
       ]
 
   context 'update most recent incident', ->

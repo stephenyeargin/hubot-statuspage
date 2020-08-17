@@ -39,7 +39,7 @@ module.exports = (robot) ->
           msg.send "Unresolved incidents:"
           for incident in unresolvedIncidents
             do (incident) ->
-              msg.send "#{incident.name} (Status: #{incident.status}, Created: #{incident.created_at}, id: #{incident.id})"
+              msg.send "#{incident.name} (Status: #{incident.status}, Created: #{incident.created_at}, ID: #{incident.id})"
 
   robot.respond /(?:status|statuspage) update (\S+) (investigating|identified|monitoring|resolved) (.+)/i, (msg) ->
     msg.http("#{baseUrl}/incidents.json").headers(authHeader).get() (err, res, body) ->
