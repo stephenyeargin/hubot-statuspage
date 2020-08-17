@@ -1,0 +1,23 @@
+{
+  "id": "bd0b7yh8rkfz",
+  "incident_id": "bd0b7yh8rkfz",
+  "name": "System has been invaded by Barbarians",
+  "affected_components": [
+    {
+      "code": "string",
+      "name": "string",
+      "old_status": "operational",
+      "new_status": "operational"
+    }
+  ],
+  "body": "string",
+  "created_at": "2020-08-14T16:11:34Z",
+  "custom_tweet": "string",
+  "deliver_notifications": true,
+  "display_at": "2020-08-14T16:11:34Z",
+  "status": "investigating",
+  "tweet_id": "string",
+  "twitter_updated_at": "2020-08-14T16:11:34Z",
+  "updated_at": "2020-08-14T16:11:34Z",
+  "wants_twitter_update": true
+}

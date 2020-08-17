@@ -71,16 +71,16 @@ describe 'statuspage', ->
       expect(room.messages).to.eql [
         [ 'alice', 'hubot statuspage incidents' ]
         [ 'hubot', 'Unresolved incidents:']
-        [ 'hubot', 'Data Layer Migration (Status: scheduled, Created: 2020-08-14T16:11:34Z)']
+        [ 'hubot', 'Data Layer Migration (Status: scheduled, Created: 2020-08-14T16:11:34Z, id: bd0b7yh8rkfz)']
       ]
 
-  context 'update an incident', ->
+  context 'update most recent incident', ->
     beforeEach (done) ->
       nock('https://api.statuspage.io')
         .get('/v1/pages/63kbmt268d37/incidents.json')
         .replyWithFile(200, __dirname + '/fixtures/unresolved-incidents.json')
       nock('https://api.statuspage.io')
-        .patch('/v1/pages/63kbmt268d37/incidents/string.json')
+        .patch('/v1/pages/63kbmt268d37/incidents/bd0b7yh8rkfz.json')
         .replyWithFile(200, __dirname + '/fixtures/unresolved-incidents.json')
       room.user.say 'alice', 'hubot statuspage update monitoring We have dispatched an army to fix it.'
       setTimeout done, 100
@@ -88,6 +88,23 @@ describe 'statuspage', ->
     it 'updates the most recent issue', ->
       expect(room.messages).to.eql [
         [ 'alice', 'hubot statuspage update monitoring We have dispatched an army to fix it.' ]
+        [ 'hubot', 'Updated incident "System has been invaded by Barbarians"']
+      ]
+
+  context 'update specific incident', ->
+    beforeEach (done) ->
+      nock('https://api.statuspage.io')
+        .get('/v1/pages/63kbmt268d37/incidents.json')
+        .replyWithFile(200, __dirname + '/fixtures/unresolved-incidents.json')
+      nock('https://api.statuspage.io')
+        .patch('/v1/pages/63kbmt268d37/incidents/bd0b7yh8rkfz.json')
+        .replyWithFile(200, __dirname + '/fixtures/incident.json')
+      room.user.say 'alice', 'hubot statuspage update bd0b7yh8rkfz monitoring We have dispatched an army to fix it.'
+      setTimeout done, 100
+  
+    it 'updates the most recent issue', ->
+      expect(room.messages).to.eql [
+        [ 'alice', 'hubot statuspage update bd0b7yh8rkfz monitoring We have dispatched an army to fix it.' ]
         [ 'hubot', 'Updated incident "System has been invaded by Barbarians"']
       ]
 
