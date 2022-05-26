@@ -1,6 +1,6 @@
 # Hubot StatusPage
 
-[![npm version](https://badge.fury.io/js/hubot-statuspage.svg)](http://badge.fury.io/js/hubot-statuspage) [![Build Status](https://app.travis-ci.com/stephenyeargin/hubot-statuspage.png)](https://app.travis-ci.com/stephenyeargin/hubot-statuspage)
+[![npm version](https://badge.fury.io/js/hubot-statuspage.svg)](http://badge.fury.io/js/hubot-statuspage) [![Node CI](https://github.com/stephenyeargin/hubot-statuspage/actions/workflows/nodejs.yml/badge.svg)](https://github.com/stephenyeargin/hubot-statuspage/actions/workflows/nodejs.yml)
 
 Interaction with the StatusPage.io API to open and update incidents, change component status.
 
