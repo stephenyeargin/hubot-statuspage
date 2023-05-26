@@ -19,7 +19,7 @@
     "url": "https://github.com/stephenyeargin/hubot-statuspage/issues"
   },
   "peerDependencies": {
-    "hubot": "^3"
+    "hubot": "^3 || ^4"
   },
   "devDependencies": {
     "chai": "^4.3.7",
