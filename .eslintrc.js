@@ -12,5 +12,16 @@ module.exports = {
   },
   rules: {
     'no-param-reassign': ['error', { props: false }],
+    'max-len': ['error', {
+      code: 100,
+      ignoreComments: true,
+      ignoreUrls: true,
+      ignoreStrings: true,
+      ignoreTemplateLiterals: true,
+      ignoreRegExpLiterals: true,
+    }],
+    'consistent-return': 'off',
+    'no-restricted-syntax': 'off',
+    'func-names': 'off',
   },
 };

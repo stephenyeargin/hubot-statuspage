@@ -8,7 +8,9 @@ module.exports = function (robot, scripts) {
       const result = [];
       for (const script of Array.from(fs.readdirSync(scriptsPath).sort())) {
         if ((scripts != null) && !Array.from(scripts).includes('*')) {
-          if (Array.from(scripts).includes(script)) { result.push(robot.loadFile(scriptsPath, script)); } else {
+          if (Array.from(scripts).includes(script)) {
+            result.push(robot.loadFile(scriptsPath, script));
+          } else {
             result.push(undefined);
           }
         } else {
